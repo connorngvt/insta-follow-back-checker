@@ -4,7 +4,7 @@ export interface StringListDataItem {
   timestamp: number;
 }
 
-export interface FollowerData {
+export interface AccountData {
   title: string;
   media_list_data: any[];
   string_list_data: StringListDataItem[];
@@ -13,3 +13,5 @@ export interface FollowerData {
 export interface FollowingData {
   relationships_following: FollowerData[];
 }
+
+export type FollowerData = AccountData;
