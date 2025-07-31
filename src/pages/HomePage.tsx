@@ -86,7 +86,12 @@ const HomePage = (props: React.HTMLAttributes<HTMLDivElement>) => {
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.1, type: "spring", stiffness: 100, damping: 10 }}
+          transition={{
+            delay: 1.1,
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+          }}
         >
           <Button
             className="mt-12 w-xs md:text-lg cursor-pointer bg-blue-600 hover:bg-blue-500 transition-colors duration-300 ease-in-out shadow-md"
@@ -101,9 +106,9 @@ const HomePage = (props: React.HTMLAttributes<HTMLDivElement>) => {
           <motion.div
             className="mt-10 mx-auto w-full md:w-1/2 flex-1 flex flex-col overflow-hidden p-2"
             key="results"
-            initial={{ opacity: 0, y: 60}}
-            animate={{ opacity: 1, y: 0}}
-            exit={{ opacity: 0, y: 60}}
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 60 }}
             transition={{ delay: 0.6, duration: 0.8, ease: "easeInOut" }}
           >
             <h2 className="text-lg md:text-xl font-semibold mb-4 text-center text-black">
@@ -113,7 +118,10 @@ const HomePage = (props: React.HTMLAttributes<HTMLDivElement>) => {
               {notFollowingBackList.map((username, idx) => (
                 <li
                   key={idx}
-                  className=" text-sm md:text-md bg-white border-gray-200 border-2 rounded-md px-4 py-2 hover:bg-blue-50 hover:border-blue-600 transition text-black font-semibold"
+                  className="cursor-pointer text-sm md:text-md bg-white border-gray-200 border-2 rounded-md px-4 py-2 hover:bg-blue-50 hover:border-blue-600 transition text-black font-semibold"
+                  onClick={() =>
+                    window.open(`http://www.instagram.com/${username}`)
+                  }
                 >
                   @{username}
                 </li>
